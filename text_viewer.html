@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursa Materiāli - Teksta Skatītājs</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+            color: #1f2937;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2563eb;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #1e40af;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: #374151;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        pre {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #1e40af;
+        }
+        
+        .course-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .course-nav a {
+            background: #e5e7eb;
+            color: #374151;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .course-nav a:hover {
+            background: #2563eb;
+            color: white;
+        }
+        
+        .course-nav a.active {
+            background: #2563eb;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Atpakaļ uz galveno lapu</a>
+        
+        <div class="course-nav">
+            <a href="course_part1_limits.txt" id="part1">1. daļa - Pamati un robežas</a>
+            <a href="course_part2_1_derivatives.txt" id="part2_1">2.1. daļa - Atvasinājumi</a>
+            <a href="course_part2_2_integrals.txt" id="part2_2">2.2. daļa - Integrāļi</a>
+        </div>
+        
+        <h1>Matemātiskās Analīzes Kursa Materiāli</h1>
+        
+        <div id="content">
+            <p>Izvēlieties kursa daļu augšā, lai apskatītu materiālus.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to load and display text content
+        function loadCourseContent(filename) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content').innerHTML = '<pre>' + data + '</pre>';
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.course-nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    document.querySelector(`[href="${filename}"]`).classList.add('active');
+                })
+                .catch(error => {
+                    document.getElementById('content').innerHTML = '<p>Kļūda ielādējot failu: ' + error.message + '</p>';
+                });
+        }
+
+        // Add click handlers to nav links
+        document.querySelectorAll('.course-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                loadCourseContent(this.getAttribute('href'));
+            });
+        });
+
+        // Load first part by default
+        window.addEventListener('load', function() {
+            loadCourseContent('course_part1_limits.txt');
+        });
+    </script>
+</body>
+</html> 

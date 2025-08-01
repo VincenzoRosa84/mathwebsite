@@ -21,6 +21,12 @@ const server = http.createServer((req, res) => {
         case '.jpg':
             contentType = 'image/jpg';
             break;
+        case '.txt':
+            contentType = 'text/plain';
+            break;
+        case '.pdf':
+            contentType = 'application/pdf';
+            break;
     }
     
     fs.readFile(filePath, (err, content) => {
