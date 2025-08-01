@@ -140,6 +140,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const materialLinks = document.querySelectorAll('.material-list a');
     materialLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            // Allow navigation to text viewer and other actual pages
+            const href = this.getAttribute('href');
+            if (href && (href.endsWith('.html') || href.startsWith('http'))) {
+                return; // Allow normal navigation
+            }
+            
             e.preventDefault();
             const materialName = this.textContent.trim();
             const isDownload = this.querySelector('.fa-download');
