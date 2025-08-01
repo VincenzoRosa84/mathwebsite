@@ -12,6 +12,10 @@ Laipni lūdzam 2.2. daļā! Šeit mēs pētīsim integrāļu jēdzienu - atvasin
 1.1. Kas ir nenoteiktais integrālis?
 Nenoteiktais integrālis ir atvasinājuma apgrieztā operācija. Ja F'(x) = f(x), tad ∫f(x)dx = F(x) + C, kur C ir integrēšanas konstante.
 
+Svarīgi saprast: Integrācija ir pretēja operācija diferencēšanai!
+- Ja mēs atvasināšanu salīdzinām ar "nobraukšanu no kalna", tad integrēšana ir "kāpšana uz kalnu"
+- Integrālis palīdz atgūt sākotnējo funkciju, zinot tās atvasinājumu
+
 1.2. Integrāļa apzīmējums
 ∫f(x)dx = F(x) + C
 

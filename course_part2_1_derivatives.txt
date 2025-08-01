@@ -18,6 +18,9 @@ Funkcijas f(x) atvasinājums punktā a ir robeža:
 f'(a) = lim [f(a + h) - f(a)]/h
         h→0
 
+Intuitīvi: Atvasinājums parāda, cik ātri funkcija mainās konkrētā punktā.
+Ģeometriski: Atvasinājums ir pieskares taisnes slīpums funkcijas grafikam.
+
 1.3. Atvasinājuma apzīmējumi
 - f'(x) - Lagrange apzīmējums
 - df/dx - Leibnica apzīmējums
