@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
             
             setTimeout(() => {
-                alert('Paldies par jūsu ziņojumu! Es drizo atbildēšu.');
+                alert('Paldies par jūsu ziņojumu! Es drīz atbildēšu.');
                 contactForm.reset();
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (playButton) {
             playButton.addEventListener('click', function() {
                 const videoTitle = card.querySelector('h4').textContent;
-                alert(`Atskan: ${videoTitle}\n\nPiezīme: īstā implementācijā šis atvērtu video atskanētāju vai pāradresētu uz jūsu video platformu (YouTube, Vimeo, u.c.)`);
+                alert(`Atskaņo: ${videoTitle}\n\nPiezīme: īstā implementācijā šis atvērtu video atskaņotāju vai pāradresētu uz jūsu video platformu (YouTube, Vimeo, u.c.)`);
             });
         }
     });
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playlistCards.forEach(card => {
         card.addEventListener('click', function() {
             const playlistTitle = this.querySelector('h4').textContent;
-            alert(`Atvēr atskanās sarakstu: ${playlistTitle}\n\nPiezīme: īstā implementācijā šis parādītu visus video atskanās sarakstā.`);
+            alert(`Atvēr atskaņošanas sarakstu: ${playlistTitle}\n\nPiezīme: īstā implementācijā šis parādītu visus video atskaņošanas sarakstā.`);
         });
     });
 
