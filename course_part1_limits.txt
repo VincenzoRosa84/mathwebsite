@@ -1,0 +1,199 @@
+MATEMĀTISKĀS ANALĪZES KURSS - 1. DAĻA
+PAMATI UN ROBEŽAS
+===============================================
+
+Ievads
+------
+Laipni lūdzam matemātiskās analīzes kursā! Šī ir 1. daļa, kas iedziļinās funkciju pamatos un robežu jēdzienā. Šis ir pamats visai matemātiskajai analīzei.
+
+1. NODARBĪBA: FUNKCIJU JĒDZIENS
+================================
+
+1.1. Kas ir funkcija?
+Funkcija ir matemātisks objekts, kas katram skaitlim no definīcijas apgabala piešķir tieši vienu vērtību no vērtību apgabala.
+
+Piemērs: f(x) = x²
+- Definīcijas apgabals: visi reālie skaitļi
+- Vērtību apgabals: visi nenegatīvie reālie skaitļi
+- f(2) = 4, f(-3) = 9
+
+1.2. Funkciju veidi
+- Lineārās funkcijas: f(x) = ax + b
+- Kvadrātfunkcijas: f(x) = ax² + bx + c
+- Polinomiālās funkcijas: f(x) = aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₀
+- Racionālās funkcijas: f(x) = P(x)/Q(x)
+- Trigonometriskās funkcijas: sin(x), cos(x), tan(x)
+- Eksponenciālās funkcijas: eˣ, aˣ
+- Logaritmiskās funkcijas: ln(x), logₐ(x)
+
+1.3. Funkciju īpašības
+- Monotonitāte (augošas/dilstošas)
+- Pāra/nepāra funkcijas
+- Periodiskums
+- Nepārtrauktība
+
+2. NODARBĪBA: ROBEŽU PAMATJĒDZIENS
+====================================
+
+2.1. Kas ir robeža?
+Robeža ir vērtība, kurai funkcija tuvojas, kad arguments tuvojas noteiktai vērtībai.
+
+Formālā definīcija:
+Funkcijai f(x) robeža punktā a ir L, ja katram ε > 0 eksistē δ > 0, ka |f(x) - L| < ε, kad 0 < |x - a| < δ.
+
+2.2. Robežu apzīmējums
+lim f(x) = L
+x→a
+
+2.3. Robežu īpašības
+- lim [f(x) + g(x)] = lim f(x) + lim g(x)
+- lim [f(x) · g(x)] = lim f(x) · lim g(x)
+- lim [f(x)/g(x)] = lim f(x) / lim g(x) (ja lim g(x) ≠ 0)
+
+3. NODARBĪBA: ROBEŽU APRĒĶINĀŠANA
+===================================
+
+3.1. Tiešā aizvietošana
+Ja funkcija ir nepārtraukta punktā a, tad lim f(x) = f(a)
+x→a
+
+Piemērs: lim (x² + 3x - 2) = 4² + 3·4 - 2 = 16 + 12 - 2 = 26
+x→4
+
+3.2. Nenoteiktības
+0/0, ∞/∞, 0·∞, ∞-∞, 0⁰, ∞⁰, 1^∞
+
+3.3. L'Hôpital noteikums
+Ja lim f(x) = 0 un lim g(x) = 0, tad
+x→a        x→a
+
+lim f(x)/g(x) = lim f'(x)/g'(x)
+x→a          x→a
+
+4. NODARBĪBA: NEPĀRTRAUKTĪBA
+=============================
+
+4.1. Nepārtrauktas funkcijas definīcija
+Funkcija f(x) ir nepārtraukta punktā a, ja:
+1) f(a) eksistē
+2) lim f(x) eksistē
+   x→a
+3) lim f(x) = f(a)
+   x→a
+
+4.2. Nepārtrauktības veidi
+- Punktā nepārtraukta
+- Intervālā nepārtraukta
+- Visur nepārtraukta
+
+4.3. Nepārtrauktu funkciju īpašības
+- Nepārtrauktu funkciju summa ir nepārtraukta
+- Nepārtrauktu funkciju reizinājums ir nepārtraukts
+- Nepārtrauktu funkciju dalījums ir nepārtraukts (ja saucējs nav 0)
+
+5. NODARBĪBA: ROBEŽAS BEZGALĪBĀ
+================================
+
+5.1. Robežas, kad x → ∞
+lim f(x) = L nozīmē, ka f(x) tuvojas L, kad x kļūst ļoti liels
+x→∞
+
+5.2. Robežas, kad x → -∞
+lim f(x) = L nozīmē, ka f(x) tuvojas L, kad x kļūst ļoti mazs
+x→-∞
+
+5.3. Horizontālās asimptotes
+Ja lim f(x) = L, tad y = L ir horizontālā asimptote
+x→∞
+
+Piemērs: lim 1/x = 0, tātad y = 0 ir horizontālā asimptote funkcijai f(x) = 1/x
+x→∞
+
+6. PRAKTISKIE PIEMĒRI UN UZDEVUMI
+==================================
+
+6.1. Piemērs 1: Robežas aprēķināšana
+Aprēķināt lim (x² - 4)/(x - 2)
+x→2
+
+Risinājums:
+1) Tiešā aizvietošana dod 0/0 (nenoteiktība)
+2) Faktorizējam: (x² - 4) = (x - 2)(x + 2)
+3) Saīsinām: (x - 2)(x + 2)/(x - 2) = x + 2
+4) lim (x + 2) = 2 + 2 = 4
+   x→2
+
+6.2. Piemērs 2: Nepārtrauktības pārbaude
+Pārbaudīt funkcijas f(x) = x² + 1 nepārtrauktību punktā x = 3
+
+Risinājums:
+1) f(3) = 3² + 1 = 10
+2) lim (x² + 1) = 3² + 1 = 10
+   x→3
+3) lim f(x) = f(3), tātad funkcija ir nepārtraukta punktā x = 3
+   x→3
+
+6.3. Uzdevumi pašmācībai
+1) Aprēķināt lim (x³ - 8)/(x - 2)
+   x→2
+
+2) Pārbaudīt funkcijas f(x) = 1/x nepārtrauktību punktā x = 1
+
+3) Atrodiet horizontālās asimptotes funkcijai f(x) = (2x + 1)/(x - 3)
+
+4) Aprēķināt lim (√x - 2)/(x - 4)
+   x→4
+
+Atbildes:
+1) 12
+2) Nepārtraukta
+3) y = 2
+4) 1/4
+
+7. KONTROLDARBS
+===============
+
+1. Definējiet funkciju un sniedziet 3 piemērus.
+
+2. Aprēķināt robežas:
+   a) lim (x² - 9)/(x - 3)
+      x→3
+   b) lim (x + 1)/(x² - 1)
+      x→-1
+   c) lim (2x + 3)/(x + 2)
+      x→∞
+
+3. Pārbaudīt funkcijas nepārtrauktību:
+   a) f(x) = x² + 2x + 1 punktā x = 0
+   b) f(x) = 1/(x - 1) punktā x = 1
+
+4. Atrodiet horizontālās asimptotes:
+   a) f(x) = (3x + 1)/(x + 2)
+   b) f(x) = (x² + 1)/(x² - 1)
+
+Kontroldarba atbildes:
+1) Funkcija ir noteikums, kas katram x piešķir vienu y vērtību
+   Piemēri: f(x) = x², g(x) = sin(x), h(x) = eˣ
+
+2) a) 6, b) -1/2, c) 2
+
+3) a) Nepārtraukta, b) Nav nepārtraukta
+
+4) a) y = 3, b) y = 1
+
+8. NĀKAMĀS NODARBĪBAS PĀRSKATS
+===============================
+
+Nākamajā daļā mēs pētīsim:
+- Atvasinājumu jēdzienu
+- Atvasināšanas noteikumus
+- Atvasinājumu ģeometrisko nozīmi
+- Funkciju ekstrēmus
+- Optimizācijas uzdevumus
+
+Sagatavojieties nākamajai daļai, pārskatot šo materiālu un risinot visus uzdevumus!
+
+---
+Kursa autors: Matemātikas skolotājs
+Kontakti: +371 20000000
+E-pasts: matematika@skola.lv 

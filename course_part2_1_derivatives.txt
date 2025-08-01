@@ -1,0 +1,227 @@
+MATEMĀTISKĀS ANALĪZES KURSS - 2.1. DAĻA
+ATVASINĀJUMI UN TO PIELIETOJUMI
+===============================================
+
+Ievads
+------
+Laipni lūdzam 2.1. daļā! Šeit mēs pētīsim atvasinājumu jēdzienu - vienu no vissvarīgākajiem matemātiskās analīzes jēdzieniem. Atvasinājumi palīdz mums saprast funkciju izmaiņu ātrumu un to īpašības.
+
+1. NODARBĪBA: ATVASINĀJUMA DEFINĪCIJA
+======================================
+
+1.1. Kas ir atvasinājums?
+Atvasinājums ir funkcijas izmaiņu ātruma mērs. Tas parāda, cik ātri mainās funkcijas vērtība, kad mainās arguments.
+
+1.2. Atvasinājuma definīcija
+Funkcijas f(x) atvasinājums punktā a ir robeža:
+
+f'(a) = lim [f(a + h) - f(a)]/h
+        h→0
+
+1.3. Atvasinājuma apzīmējumi
+- f'(x) - Lagrange apzīmējums
+- df/dx - Leibnica apzīmējums
+- Df(x) - Eilera apzīmējums
+
+2. NODARBĪBA: ATVASINĀJUMA ĢEOMETRISKĀ NOZĪME
+===============================================
+
+2.1. Pieskares līnija
+Atvasinājums punktā ir pieskares līnijas slīpums šajā punktā.
+
+2.2. Pieskares līnijas vienādojums
+y - f(a) = f'(a)(x - a)
+
+2.3. Piemērs
+Funkcijai f(x) = x² punktā x = 2:
+- f(2) = 4
+- f'(2) = 4 (kā redzēsim vēlāk)
+- Pieskares līnija: y - 4 = 4(x - 2)
+- y = 4x - 4
+
+3. NODARBĪBA: ATVASINĀŠANAS NOTEIKUMI
+======================================
+
+3.1. Konstantes atvasinājums
+d/dx(c) = 0, kur c ir konstante
+
+3.2. Jaudas funkcijas atvasinājums
+d/dx(xⁿ) = nxⁿ⁻¹
+
+Piemēri:
+- d/dx(x²) = 2x
+- d/dx(x³) = 3x²
+- d/dx(x⁻¹) = -x⁻² = -1/x²
+
+3.3. Summas noteikums
+d/dx[f(x) + g(x)] = f'(x) + g'(x)
+
+3.4. Reizinājuma noteikums
+d/dx[f(x) · g(x)] = f'(x)g(x) + f(x)g'(x)
+
+3.5. Dalījuma noteikums
+d/dx[f(x)/g(x)] = [f'(x)g(x) - f(x)g'(x)]/[g(x)]²
+
+3.6. Saliktās funkcijas noteikums (ķēdes noteikums)
+d/dx[f(g(x))] = f'(g(x)) · g'(x)
+
+4. NODARBĪBA: TRIGONOMETRISKO FUNKCIJU ATVASINĀJUMI
+===================================================
+
+4.1. Pamata trigonometrisko funkciju atvasinājumi
+- d/dx(sin x) = cos x
+- d/dx(cos x) = -sin x
+- d/dx(tan x) = sec² x = 1/cos² x
+- d/dx(cot x) = -csc² x = -1/sin² x
+- d/dx(sec x) = sec x tan x
+- d/dx(csc x) = -csc x cot x
+
+4.2. Apgriezto trigonometrisko funkciju atvasinājumi
+- d/dx(arcsin x) = 1/√(1 - x²)
+- d/dx(arccos x) = -1/√(1 - x²)
+- d/dx(arctan x) = 1/(1 + x²)
+
+5. NODARBĪBA: EKSPONENCIĀLO UN LOGARITMISKO FUNKCIJU ATVASINĀJUMI
+==================================================================
+
+5.1. Eksponenciālo funkciju atvasinājumi
+- d/dx(eˣ) = eˣ
+- d/dx(aˣ) = aˣ ln a
+
+5.2. Logaritmisko funkciju atvasinājumi
+- d/dx(ln x) = 1/x
+- d/dx(logₐ x) = 1/(x ln a)
+
+6. NODARBĪBA: AUGSTĀKU KĀRTU ATVASINĀJUMI
+==========================================
+
+6.1. Otrās kārtas atvasinājums
+f''(x) = d/dx[f'(x)]
+
+6.2. n-tās kārtas atvasinājums
+f⁽ⁿ⁾(x) = d/dx[f⁽ⁿ⁻¹⁾(x)]
+
+6.3. Piemērs
+Funkcijai f(x) = x³:
+- f'(x) = 3x²
+- f''(x) = 6x
+- f'''(x) = 6
+- f⁽⁴⁾(x) = 0
+
+7. NODARBĪBA: FUNKCIJU EKSTRĒMI
+================================
+
+7.1. Lokālie ekstrēmi
+Funkcijai f(x) punktā x = a ir:
+- Lokālais maksimums, ja f'(a) = 0 un f''(a) < 0
+- Lokālais minimums, ja f'(a) = 0 un f''(a) > 0
+
+7.2. Ekstrēmu atrašanas algoritms
+1) Atrodiet f'(x)
+2) Atrisiniet vienādojumu f'(x) = 0
+3) Pārbaudiet katru kritisko punktu ar otro atvasinājumu
+4) Pārbaudiet intervāla galus (ja funkcija ir definēta slēgtā intervālā)
+
+7.3. Piemērs
+Funkcijai f(x) = x³ - 3x² + 2:
+- f'(x) = 3x² - 6x
+- f'(x) = 0: 3x² - 6x = 0
+- x(3x - 6) = 0
+- x = 0 vai x = 2
+- f''(x) = 6x - 6
+- f''(0) = -6 < 0 → lokālais maksimums
+- f''(2) = 6 > 0 → lokālais minimums
+
+8. NODARBĪBA: OPTIMIZĀCIJAS UZDEVUMI
+=====================================
+
+8.1. Optimizācijas uzdevumu risināšanas soļi
+1) Izveidojiet funkciju, kas raksturo optimizējamo lielumu
+2) Atrodiet funkcijas atvasinājumu
+3) Atrisiniet vienādojumu f'(x) = 0
+4) Pārbaudiet, vai atrastais punkts ir maksimums vai minimums
+5) Atbildiet uz jautājumu
+
+8.2. Piemērs: Taisnstūra laukuma maksimizēšana
+Dots: Taisnstūra perimetrs ir 20 m
+Jautājums: Kādi jābūt taisnstūra izmēriem, lai laukums būtu maksimāls?
+
+Risinājums:
+- Pieņemsim, ka viena mala ir x, tad otra mala ir (10 - x)
+- Laukums: A(x) = x(10 - x) = 10x - x²
+- A'(x) = 10 - 2x
+- A'(x) = 0: 10 - 2x = 0 → x = 5
+- A''(x) = -2 < 0 → maksimums
+- Atbilde: 5m × 5m (kvadrāts)
+
+9. PRAKTISKIE PIEMĒRI UN UZDEVUMI
+===================================
+
+9.1. Piemērs 1: Atvasinājuma aprēķināšana
+Aprēķināt f'(x) funkcijai f(x) = x³ + 2x² - 5x + 3
+
+Risinājums:
+f'(x) = 3x² + 4x - 5
+
+9.2. Piemērs 2: Saliktās funkcijas atvasinājums
+Aprēķināt d/dx[sin(x²)]
+
+Risinājums:
+- f(x) = sin(x), g(x) = x²
+- f'(x) = cos(x), g'(x) = 2x
+- d/dx[sin(x²)] = cos(x²) · 2x = 2x cos(x²)
+
+9.3. Uzdevumi pašmācībai
+1) Aprēķināt f'(x) funkcijai f(x) = (x² + 1)(x - 2)
+
+2) Atrodiet pieskares līnijas vienādojumu funkcijai f(x) = x² punktā x = 3
+
+3) Atrodiet funkcijas f(x) = x³ - 6x² + 9x lokālos ekstrēmus
+
+4) Optimizējiet: Taisnstūra laukums ir 100 m². Kādi jābūt izmēriem, lai perimetrs būtu minimāls?
+
+Atbildes:
+1) 3x² - 4x - 1
+2) y = 6x - 9
+3) Lokālais maksimums x = 1, lokālais minimums x = 3
+4) 10m × 10m
+
+10. KONTROLDARBS
+================
+
+1. Aprēķināt atvasinājumus:
+   a) f(x) = x⁴ - 3x² + 2x
+   b) f(x) = sin(x)cos(x)
+   c) f(x) = ln(x² + 1)
+
+2. Atrodiet pieskares līnijas vienādojumu funkcijai f(x) = 1/x punktā x = 2
+
+3. Atrodiet funkcijas f(x) = x³ - 12x lokālos ekstrēmus
+
+4. Optimizējiet: No 100m stieples izveidojiet apli un kvadrātu. Kā sadalīt stiepli, lai kopējais laukums būtu maksimāls?
+
+Kontroldarba atbildes:
+1) a) 4x³ - 6x + 2, b) cos²(x) - sin²(x), c) 2x/(x² + 1)
+
+2) y = -x/4 + 1
+
+3) Lokālais maksimums x = -2, lokālais minimums x = 2
+
+4) Aplim 44m, kvadrātam 56m
+
+11. NĀKAMĀS NODARBĪBAS PĀRSKATS
+================================
+
+Nākamajā daļā (2.2) mēs pētīsim:
+- Nenoteikto integrāli
+- Noteikto integrāli
+- Integrēšanas metodes
+- Integrāļu pielietojumus
+- Diferenciālvienādojumus
+
+Sagatavojieties nākamajai daļai, pārskatot šo materiālu un risinot visus uzdevumus!
+
+---
+Kursa autors: Matemātikas skolotājs
+Kontakti: +371 20000000
+E-pasts: matematika@skola.lv 
