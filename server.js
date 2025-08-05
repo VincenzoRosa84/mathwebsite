@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-    let filePath = path.join(__dirname, 'mathwebpage', req.url === '/' ? 'index.html' : req.url);
+    let filePath = path.join(__dirname, 'docs', req.url === '/' ? 'index.html' : req.url);
     
     const extname = path.extname(filePath);
     let contentType = 'text/html';
