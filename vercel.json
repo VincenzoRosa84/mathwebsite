@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/docs/$1"
+      "destination": "/mathwebpage/$1"
     }
   ]
 }
