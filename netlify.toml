@@ -1,7 +1,0 @@
-[build]
-  publish = "mathwebpage"
-
-[[redirects]]
-  from = "/*"
-  to = "/mathwebpage/:splat"
-  status = 200
