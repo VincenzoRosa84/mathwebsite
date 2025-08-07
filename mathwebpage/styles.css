@@ -185,42 +185,70 @@ body {
     flex-wrap: wrap;
 }
 
-.math-visual {
+.logo-whiteboard {
     position: relative;
     height: 400px;
+    background: #f8f9fa;
+    border: 3px solid #2563eb;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
 }
 
-.equation, .formula, .symbol {
+.math-equations-left {
     position: absolute;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    opacity: 0.1;
-    animation: float 6s ease-in-out infinite;
+    left: 20px;
+    top: 20px;
+    bottom: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Courier New', monospace;
 }
 
-.equation {
-    top: 20%;
-    left: 10%;
-    font-size: 1.5rem;
-    animation-delay: 0s;
+.math-equations-left .equation {
+    font-size: 0.9rem;
+    color: #1e293b;
+    margin: 4px 0;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
-.formula {
-    top: 60%;
-    right: 20%;
-    font-size: 1.8rem;
-    animation-delay: 2s;
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    z-index: 2;
 }
 
-.symbol {
-    top: 40%;
-    left: 50%;
+.logo-sintija {
     font-size: 4rem;
-    animation-delay: 4s;
+    color: #2563eb;
+    letter-spacing: -2px;
+}
+
+.logo-sigma {
+    font-size: 4rem;
+    color: #2563eb;
+    font-weight: 700;
+    font-family: 'Times New Roman', serif;
+    font-style: normal;
+    transform: rotate(-10deg);
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(37, 99, 235, 0.3);
+    margin: 0 -10px 0 0;
+}
+
+.logo-aca {
+    font-size: 4rem;
+    color: #2563eb;
+    letter-spacing: -2px;
 }
 
 @keyframes float {
@@ -947,6 +975,22 @@ body {
     .course-details {
         padding: 1rem;
     }
+    
+    .logo-whiteboard {
+        height: 300px;
+    }
+    
+    .logo-sintija, .logo-sigma, .logo-aca {
+        font-size: 2.5rem;
+    }
+    
+    .math-equations-left {
+        width: 120px;
+    }
+    
+    .math-equations-left .equation {
+        font-size: 0.7rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -964,5 +1008,27 @@ body {
     
     .nav-container {
         padding: 0 15px;
+    }
+    
+    .logo-whiteboard {
+        height: 250px;
+        margin: 20px 0;
+    }
+    
+    .logo-sintija, .logo-sigma, .logo-aca {
+        font-size: 2rem;
+    }
+    
+    .logo-text {
+        gap: 10px;
+    }
+    
+    .math-equations-left {
+        width: 100px;
+        left: 10px;
+    }
+    
+    .math-equations-left .equation {
+        font-size: 0.6rem;
     }
 }
