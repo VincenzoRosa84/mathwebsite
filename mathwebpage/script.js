@@ -110,34 +110,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: contactForm.message.value
             };
             
-            // Send notification email to you
-            console.log('Sending notification with data:', formData);
+            // Send email using EmailJS
             emailjs.send('service_gqhbhcj', 'template_mrtypfh', formData)
                 .then(function(response) {
-                    console.log('Notification sent successfully:', response);
-                    
-                    // Send auto-reply to form submitter
-                    const autoReplyData = {
-                        name: formData.from_name,
-                        title: formData.subject,
-                        to_email: formData.from_email
-                    };
-                    
-                    return emailjs.send('service_gqhbhcj', 'template_72gdzw8', autoReplyData);
-                })
-                .then(function(response) {
-                    // Both emails sent successfully
-                    console.log('Auto-reply sent successfully:', response);
+                    // Success
                     alert('Paldies par jūsu ziņojumu! Es drīz atbildēšu.');
                     contactForm.reset();
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
-                })
-                .catch(function(error) {
-                    // Error in either email
+                }, function(error) {
+                    // Error
                     console.error('EmailJS error:', error);
-                    console.error('Error status:', error.status);
-                    console.error('Error text:', error.text);
                     alert('Kļūda: ' + error.status + ' - ' + (error.text || 'Nezināma kļūda'));
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
