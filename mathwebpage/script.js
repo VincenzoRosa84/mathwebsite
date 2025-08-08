@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize EmailJS
     (function() {
-        emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual EmailJS public key
+        emailjs.init("0dVC6xi-NwKfMkB7C");
     })();
 
     if (contactForm) {
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             // Send email using EmailJS
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+            emailjs.send('service_gqhbhcj', 'template_mrtypfh', formData)
                 .then(function(response) {
                     // Success
                     alert('Paldies par jūsu ziņojumu! Es drīz atbildēšu.');
