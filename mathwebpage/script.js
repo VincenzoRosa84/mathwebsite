@@ -107,22 +107,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 from_name: contactForm.name.value,
                 from_email: contactForm.email.value,
                 subject: contactForm.subject.value,
-                message: contactForm.message.value,
-                to_email: 'mat.skol@inbox.lv'
+                message: contactForm.message.value
             };
             
             // Send email using EmailJS
+            console.log('Sending with data:', formData);
             emailjs.send('service_gqhbhcj', 'template_mrtypfh', formData)
                 .then(function(response) {
                     // Success
+                    console.log('SUCCESS:', response);
                     alert('Paldies par jūsu ziņojumu! Es drīz atbildēšu.');
                     contactForm.reset();
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
                 }, function(error) {
                     // Error
-                    console.error('EmailJS error:', error);
-                    alert('Atvainojiet, radās kļūda sūtot ziņojumu. Lūdzu, mēģiniet vēlreiz vai sazinieties tieši: mat.skol@inbox.lv');
+                    console.error('DETAILED EmailJS error:', error);
+                    console.error('Error status:', error.status);
+                    console.error('Error text:', error.text);
+                    alert('Kļūda: ' + error.status + ' - ' + (error.text || 'Nezināma kļūda'));
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
                 });
