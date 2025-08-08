@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const autoReplyData = {
                         name: formData.from_name,
                         title: formData.subject,
-                        email: formData.from_email
+                        to_email: formData.from_email
                     };
                     
                     return emailjs.send('service_gqhbhcj', 'template_72gdzw8', autoReplyData);
