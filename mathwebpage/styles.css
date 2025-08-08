@@ -69,6 +69,7 @@ body {
     font-size: 1.8rem;
 }
 
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -183,6 +184,22 @@ body {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-background-image {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .logo-whiteboard {
@@ -806,6 +823,7 @@ body {
     font-size: 1.8rem;
     color: var(--accent-color);
 }
+
 
 .footer-section p {
     color: #d1d5db;
