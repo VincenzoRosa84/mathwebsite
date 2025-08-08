@@ -86,28 +86,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual EmailJS public key
+    })();
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = new FormData(contactForm);
-            const formDataObj = {};
-            formData.forEach((value, key) => {
-                formDataObj[key] = value;
-            });
-            
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             
-            submitButton.textContent = 'Sending...';
+            // Show loading state
+            submitButton.textContent = 'Sūta ziņojumu...';
             submitButton.disabled = true;
             
-            setTimeout(() => {
-                alert('Paldies par jūsu ziņojumu! Es drīz atbildēšu.');
-                contactForm.reset();
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }, 1000);
+            // Get form data
+            const formData = {
+                from_name: contactForm.name.value,
+                from_email: contactForm.email.value,
+                subject: contactForm.subject.value,
+                message: contactForm.message.value,
+                to_email: 'mat.skol@inbox.lv'
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    // Success
+                    alert('Paldies par jūsu ziņojumu! Es drīz atbildēšu.');
+                    contactForm.reset();
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                }, function(error) {
+                    // Error
+                    console.error('EmailJS error:', error);
+                    alert('Atvainojiet, radās kļūda sūtot ziņojumu. Lūdzu, mēģiniet vēlreiz vai sazinieties tieši: mat.skol@inbox.lv');
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                });
         });
     }
 
