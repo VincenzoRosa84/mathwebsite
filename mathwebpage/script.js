@@ -103,10 +103,15 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
             
             // Get form data
+            const subjectSelectElement = contactForm.subject;
+            const selectedSubjectTitle = subjectSelectElement.options[subjectSelectElement.selectedIndex].text;
+
             const formData = {
                 from_name: contactForm.name.value,
-                from_email: contactForm.email.value,
-                subject: contactForm.subject.value,
+                from_email: contactForm.email.value, // used by EmailJS template as {{from_email}}
+                name: contactForm.name.value,        // exposes {{name}} in template
+                title: selectedSubjectTitle,         // exposes {{title}} (human-readable subject label)
+                subject: subjectSelectElement.value,
                 message: contactForm.message.value
             };
             
