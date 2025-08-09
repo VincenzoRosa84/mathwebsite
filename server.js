@@ -3,7 +3,12 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-    let filePath = path.join(__dirname, 'mathwebpage', req.url === '/' ? 'index.html' : req.url);
+    // Handle logo requests - serve from root logo directory
+    if (req.url.startsWith('/logo/')) {
+        filePath = path.join(__dirname, req.url);
+    } else {
+        filePath = path.join(__dirname, 'mathwebpage', req.url === '/' ? 'index.html' : req.url);
+    }
     
     const extname = path.extname(filePath);
     let contentType = 'text/html';
@@ -21,6 +26,9 @@ const server = http.createServer((req, res) => {
         case '.jpg':
         case '.jpeg':
             contentType = 'image/jpeg';
+            break;
+        case '.webp':
+            contentType = 'image/webp';
             break;
         case '.txt':
             contentType = 'text/plain';

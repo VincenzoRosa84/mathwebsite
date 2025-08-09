@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload the most common (1x WebP) logo for faster first paint -->
+    <link rel="preload" 
+          as="image" 
+          href="/logo/sintija-exact-extract-with-macron.webp" 
+          type="image/webp" 
+          imagesrcset="/logo/sintija-exact-extract-with-macron.webp 1x, /logo/sintija-exact-extract-with-macron@2x.webp 2x">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
@@ -14,8 +20,32 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <i class="fas fa-square-root-alt"></i>
-                    <span>Sintija Māca</span>
+                    <!-- Responsive, Retina-ready, WebP-first logo -->
+                    <picture>
+                      <!-- WebP versions for modern browsers -->
+                      <source 
+                        srcset="
+                          /logo/sintija-exact-extract-with-macron.webp 1x,
+                          /logo/sintija-exact-extract-with-macron@2x.webp 2x,
+                          /logo/sintija-exact-extract-with-macron@3x.webp 3x
+                        " 
+                        type="image/webp">
+                      <!-- PNG fallback for browsers without WebP -->
+                      <source 
+                        srcset="
+                          /logo/sintija-exact-extract-with-macron.png 1x,
+                          /logo/sintija-exact-extract-with-macron@2x.png 2x,
+                          /logo/sintija-exact-extract-with-macron@3x.png 3x
+                        " 
+                        type="image/png">
+                      <!-- Fallback <img> — with lazy loading -->
+                      <img 
+                        src="/logo/sintija-exact-extract-with-macron.png" 
+                        alt="Sintija Māca" 
+                        height="65" 
+                        loading="lazy"
+                        decoding="async">
+                    </picture>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Sākums</a></li>
@@ -310,8 +340,32 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-square-root-alt"></i>
-                        <span>Sintija Māca</span>
+                        <!-- Responsive, Retina-ready, WebP-first logo -->
+                        <picture>
+                          <!-- WebP versions for modern browsers -->
+                          <source 
+                            srcset="
+                              ../logo/sintija-exact-extract-with-macron.webp 1x,
+                              ../logo/sintija-exact-extract-with-macron@2x.webp 2x,
+                              ../logo/sintija-exact-extract-with-macron@3x.webp 3x
+                            " 
+                            type="image/webp">
+                          <!-- PNG fallback for browsers without WebP -->
+                          <source 
+                            srcset="
+                              ../logo/sintija-exact-extract-with-macron.png 1x,
+                              ../logo/sintija-exact-extract-with-macron@2x.png 2x,
+                              ../logo/sintija-exact-extract-with-macron@3x.png 3x
+                            " 
+                            type="image/png">
+                          <!-- Fallback <img> — with lazy loading -->
+                          <img 
+                            src="/logo/sintija-exact-extract-with-macron.png" 
+                            alt="Sintija Māca" 
+                            height="65" 
+                            loading="lazy"
+                            decoding="async">
+                        </picture>
                     </div>
                     <p>Iedvesmojam studentus izcelt matemātikā caur inovatīvām mācīšanas metodēm un visaptverošiem mācību resursiem.</p>
                 </div>

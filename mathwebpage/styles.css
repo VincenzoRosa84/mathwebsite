@@ -69,6 +69,12 @@ body {
     font-size: 1.8rem;
 }
 
+.nav-logo picture img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+}
+
 
 .nav-menu {
     display: flex;
@@ -822,6 +828,17 @@ body {
 .footer-logo i {
     font-size: 1.8rem;
     color: var(--accent-color);
+}
+
+.footer-logo picture img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    filter: invert(1) brightness(1.1) contrast(1.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
 }
 
 
