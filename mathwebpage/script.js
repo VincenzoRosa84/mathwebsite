@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const materialLinks = document.querySelectorAll('.material-list a');
     materialLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Allow navigation to text viewer and other actual pages
+            // Allow navigation to text viewer, PDFs, and other actual pages
             const href = this.getAttribute('href');
-            if (href && (href.endsWith('.html') || href.startsWith('http'))) {
-                return; // Allow normal navigation
+            if (href && (href.endsWith('.html') || href.endsWith('.pdf') || href.startsWith('http'))) {
+                return; // Allow normal navigation and PDF downloads
             }
             
             e.preventDefault();

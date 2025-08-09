@@ -3,11 +3,14 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
+    // Decode URL to handle spaces and special characters
+    const decodedUrl = decodeURIComponent(req.url);
+    
     // Handle logo requests - serve from root logo directory
-    if (req.url.startsWith('/logo/')) {
-        filePath = path.join(__dirname, req.url);
+    if (decodedUrl.startsWith('/logo/')) {
+        filePath = path.join(__dirname, decodedUrl);
     } else {
-        filePath = path.join(__dirname, 'mathwebpage', req.url === '/' ? 'index.html' : req.url);
+        filePath = path.join(__dirname, 'mathwebpage', decodedUrl === '/' ? 'index.html' : decodedUrl);
     }
     
     const extname = path.extname(filePath);
@@ -48,8 +51,19 @@ const server = http.createServer((req, res) => {
                 res.end('Server error');
             }
         } else {
-            res.writeHead(200, { 'Content-Type': contentType });
-            res.end(content, 'utf-8');
+            // Set appropriate headers for PDF downloads
+            if (contentType === 'application/pdf') {
+                const filename = path.basename(filePath);
+                res.writeHead(200, {
+                    'Content-Type': contentType,
+                    'Content-Disposition': `attachment; filename="${filename}"`,
+                    'Content-Length': content.length
+                });
+                res.end(content);
+            } else {
+                res.writeHead(200, { 'Content-Type': contentType });
+                res.end(content, contentType.startsWith('text/') ? 'utf-8' : undefined);
+            }
         }
     });
 });
