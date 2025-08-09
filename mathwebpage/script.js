@@ -109,8 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = {
                 from_name: contactForm.name.value,
                 from_email: contactForm.email.value, // used by EmailJS template as {{from_email}}
-                name: contactForm.name.value,        // exposes {{name}} in template
-                title: selectedSubjectTitle,         // exposes {{title}} (human-readable subject label)
+                subject_title: selectedSubjectTitle, // human-readable subject label for template {{subject_title}}
                 subject: subjectSelectElement.value,
                 message: contactForm.message.value
             };
